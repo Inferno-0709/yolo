@@ -20,7 +20,7 @@ class RAGPipeline:
         self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": 3})
 
         # 3️⃣ Initialize Google Generative AI
-        genai.configure(api_key="AIzaSyCPz8O7e6e5CJNMtzh0Kue3pNuF1A3RSqA")  # Set your key here or via environment variable
+        genai.configure(api_key="")  # Set your key here or via environment variable
 
     def generate_insight(self, detected_objects):
         """
@@ -47,3 +47,4 @@ class RAGPipeline:
 
         insight_text = response.text.strip()
         return insight_text
+
